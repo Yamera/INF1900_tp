@@ -24,7 +24,7 @@ Table des états: //Changer nom des etats
 | RELEASE2      |     0 | RELEASE2      | Off   |
 | RELEASE2      |     1 | PRESS3        | Off   |
 | PRESS3        |     0 | INIT          | Green |
-| PRESS3        |     1 | PRESS         | Green |
+| PRESS3        |     1 | PRESS3         | Green |
 +---------------+-------+---------------+-------+
 */
 
