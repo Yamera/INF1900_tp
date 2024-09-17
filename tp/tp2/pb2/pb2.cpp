@@ -34,7 +34,7 @@ Table des états: //Changer nom des etats
 
 #define BOUTON_PIN PD2
 
-constexpr uint8_t debounceDelayMs = 10;
+constexpr uint8_t DEBOUNCE_DELAY_MS = 10;
 constexpr uint16_t DELAY_MS = 2000;
 
 typedef enum
@@ -77,12 +77,12 @@ void turnOnAmberLED()
 }
 bool stateButton()
 {
-    return PIND & (1 << PD2); // fonction utile ?
+    return PIND & (1 << PD2);
 }
 bool isClicked()
 {
     uint8_t initial = stateButton();
-    _delay_ms(debounceDelayMs);
+    _delay_ms(DEBOUNCE_DELAY_MS);
     return initial && stateButton();
 }
 
@@ -94,7 +94,7 @@ void turnOffLight()
 bool isRelease()
 {
     uint8_t initial = stateButton();
-    _delay_ms(debounceDelayMs);
+    _delay_ms(DEBOUNCE_DELAY_MS);
     return (!initial && !(PIND & (1 << PD2)));
 }
 

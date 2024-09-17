@@ -28,7 +28,7 @@ Table des états:
 
 #define BOUTON_PIN PD2
 
-constexpr uint8_t debounceDelayMs = 10;
+constexpr uint8_t DEBOUCE_DELAY_MS = 10;
 constexpr uint16_t DELAY_MS = 2000;
 
 typedef enum
@@ -58,7 +58,7 @@ void turnOnGreenLED()
 bool isClicked()
 {
     uint8_t initial = PIND & (1 << PD2);
-    _delay_ms(debounceDelayMs);
+    _delay_ms(DEBOUCE_DELAY_MS);
     return initial & PIND & (1 << PD2);
 }
 

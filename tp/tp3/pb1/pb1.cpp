@@ -17,26 +17,33 @@ void pins()
     DDRA |= (1 << PA0) | (1 << PA1);
     DDRD &= ~(1 << BOUTON_PIN);
 }
-void dalay(int pourcentagePWM)
+void delai(uint8_t pourcentagePWM)
 {
-    for (auto i = 0; i < pourcentagePWM; i++)
+
+    uint16_t delaiTotal = (pourcentagePWM * DELAI_BASE) / 100;
+    for (uint16_t i = 0; i < delaiTotal; i++)
     {
-        delay_ms(pourcentagePWM);
+        _delay_ms(1);
     }
 }
 
 void setPWM()
 {
-    for (auto i = 0; i < pourcentagePWM; i++)
+    int pourcentageAllume = 100;
+    int nombrePeriodes = 5;
+
+    for (int i = 0; i < nombrePeriodes; i++)
     {
+
+        int dureeAllumee = (pourcentageAllume * 10);
+
         turnOnGreenLED();
-        _delay_us();
+        delai(pourcentageAllume);
+
         turnOffLight();
-        _delay_us();
-        turnOnGreenLED();
-        _delay_us();
-        turnOffLight();
-        _delay_us();
+        delai(100 - dureeAllumee);
+
+        pourcentageAllume -= 20;
     }
 }
 
