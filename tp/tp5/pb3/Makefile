@@ -23,7 +23,7 @@ MCU=atmega324pa
 
 # Nom de votre projet
 # (utilisez un seul mot, exemple: 'monprojet')
-PROJECTNAME=tp4
+PROJECTNAME=tp5
 
 # Fichiers sources
 # Utilisez le suffixe .cpp pour les fichiers C++

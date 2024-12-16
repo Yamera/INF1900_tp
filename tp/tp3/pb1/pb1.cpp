@@ -16,7 +16,9 @@ void pins()
 {
     DDRA |= (1 << PA0) | (1 << PA1);
     DDRD &= ~(1 << BOUTON_PIN);
-}
+} 
+
+
 void delai(uint8_t pourcentagePWM)
 {
 

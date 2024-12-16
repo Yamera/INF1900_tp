@@ -1,32 +1,4 @@
-/*
- * Noms: Yasmine Meraoubi, Maroua Lassakeur
- * Équipe: 70
- * Groupe: 01
- * TP2 PB2
- * Description: DEl initialement en rouge, lorsque appuyer passe au ambre. Lorsque relâché devient vert, ensuite lorsque appuyer
- * repasse au rouge, quand relâché s'éteint. Reappuyer l'a rend vert, puis relâcher repart à l'état initial rouge.
- * Identifications matérielles : La pin D2 est notre boutton en entrée / Les pins A0 et A1 sont les sorties de la DEL.
- */
 
-/*
-Table des états: //Changer nom des etats
-+---------------+-------+---------------+-------+
-| Etat courrant | Entree|  Prochain Etat| DEL   |
-+---------------+-------+---------------+-------+
-| INIT          |     0 | INIT          | Red   |
-| INIT          |     1 | PRESS1        | Red   |
-| PRESS1        |     0 | RELEASE1      | Amber |
-| PRESS1        |     1 | PRESS1        | Amber |
-| RELEASE1      |     0 | RELEASE       | Green |
-| RELEASE1      |     1 | PRESS2        | Green |
-| PRESS2        |     0 | RELEASE2      | Red   |
-| PRESS2        |     1 | PRESS2        | Red   |
-| RELEASE2      |     0 | RELEASE2      | Off   |
-| RELEASE2      |     1 | PRESS3        | Off   |
-| PRESS3        |     0 | INIT          | Green |
-| PRESS3        |     1 | PRESS3         | Green |
-+---------------+-------+---------------+-------+
-*/
 
 #define F_CPU 8000000UL
 #include <avr/io.h>

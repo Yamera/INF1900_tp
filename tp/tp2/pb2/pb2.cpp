@@ -24,7 +24,7 @@ Table des états: //Changer nom des etats
 | RELEASE2      |     0 | RELEASE2      | Off   |
 | RELEASE2      |     1 | PRESS3        | Off   |
 | PRESS3        |     0 | INIT          | Green |
-| PRESS3        |     1 | PRESS3         | Green |
+| PRESS3        |     1 | PRESS3        | Green |
 +---------------+-------+---------------+-------+
 */
 
@@ -71,9 +71,9 @@ void turnOnRedLED()
 void turnOnAmberLED()
 {
     turnOnGreenLED();
-    _delay_ms(25);
+    _delay_ms(9);
     turnOnRedLED();
-    _delay_ms(10);
+    _delay_ms(6);
 }
 bool stateButton()
 {
@@ -158,6 +158,6 @@ int main()
     pins();
     while (true)
     {
-        stateMachine();
+        turnOnAmberLED();
     }
 }
